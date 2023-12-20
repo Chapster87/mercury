@@ -346,6 +346,10 @@
   overflow: hidden;
 }
 
+.card .icon-wrap svg {
+  display: inline;
+}
+
 .card-information>*+* {
   margin-top: 0.5rem;
 }

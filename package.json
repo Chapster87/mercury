@@ -1,0 +1,59 @@
+{
+    "name": "dawn",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/Chapster87/dawn#readme",
+    "bugs": {
+        "url": "https://github.com/Chapster87/dawn/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Chapster87/dawn.git"
+    },
+    "license": "ISC",
+    "author": "Andy Chapman",
+    "main": "webpack.config.js",
+    "scripts": {
+        "build": "webpack",
+        "dev": "NODE_ENV=development webpack --watch --progress",
+        "shopify": "cd dist && shopify theme dev --store chapman001 --port=3000"
+    },
+    "babel": {
+        "presets": [
+            "@shopify/babel-preset"
+        ]
+    },
+    "browserslist": [
+        "extends @shopify/browserslist-config"
+    ],
+    "prettier": "@shopify/prettier-config",
+    "devDependencies": {
+        "@babel/core": "^7.23.6",
+        "@babel/eslint-parser": "^7.23.3",
+        "@babel/plugin-transform-runtime": "^7.23.6",
+        "@babel/preset-env": "^7.23.6",
+        "@shopify/babel-preset": "25.0.0",
+        "@shopify/browserslist-config": "^3.0.0",
+        "@shopify/eslint-plugin": "^44.0.0",
+        "@shopify/postcss-plugin": "^5.0.2",
+        "@shopify/prettier-config": "^1.1.2",
+        "babel-core": "6.26.3",
+        "babel-loader": "^9.1.3",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.8.1",
+        "css-minimizer-webpack-plugin": "^5.0.1",
+        "eslint": "^8.56.0",
+        "eslint-webpack-plugin": "^4.0.1",
+        "glob": "^10.3.10",
+        "mini-css-extract-plugin": "^2.7.6",
+        "postcss": "^8.4.32",
+        "postcss-loader": "^7.3.3",
+        "postcss-preset-env": "^9.3.0",
+        "prettier": "^3.1.1",
+        "style-loader": "^3.3.3",
+        "tailwindcss": "^3.3.6",
+        "terser-webpack-plugin": "^5.3.9",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4"
+    }
+}

@@ -1,0 +1,23 @@
+.foo { flex: 1; }
+.bar { flex: 1 1; }
+.foz { flex: 1 1 0; }
+.baz { flex: 1 1 0px; }
+
+.foo {
+    will-change: transform;
+}
+
+.rule-test {
+    flex: 1;
+
+    .bingo {
+        color: blue;
+    }
+}
+
+h1 {
+    font-size: calc(16px * 2);
+    height: calc(100px - 2em);
+    width: calc(2*var(--base-width));
+    margin-bottom: calc(16px * 1.5);
+}

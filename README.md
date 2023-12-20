@@ -1,5 +1,12 @@
 # Dawn
 
+## Custom Additions
+
+### TailwindCSS
+- Borrowed Setup from [Shopify Dawn theme with TailWindCSS & Prettier integrations](https://github.com/TrellisCommerce/shopify-tailwind-starter-base)
+- Anytime you add a TailwindCSS class (remember to prefix it with twcss-), run the CLI tool to scan your template files for classes and build your CSS to assets/app.css:
+-- `npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css --watch`
+
 [![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)
 
