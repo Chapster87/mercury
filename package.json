@@ -16,7 +16,7 @@
     "scripts": {
         "build": "webpack",
         "dev": "NODE_ENV=development webpack --watch --progress",
-        "shopify": "cd dist && shopify theme dev --store chapman001 --port=3000"
+        "shopify": "cd dist && shopify theme dev --store chapman001 --port=3002"
     },
     "babel": {
         "presets": [
