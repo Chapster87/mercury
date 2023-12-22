@@ -1,0 +1,39 @@
+.guide-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--skin-primary-color);
+    padding-top: rem(10px);
+    padding-bottom: rem(10px);
+    margin-top: rem(30px);
+    margin-bottom: rem(20px);
+    border-bottom: 1px solid var(--color-grey6);
+}
+
+.guide-subheading {
+    margin-top: rem(25px);
+}
+
+.heading-code-switch {
+    margin-right: 1rem;
+}
+
+pre.prettyprint {
+    display: none;
+
+    .code-active & {
+        display: block;
+    }
+
+    &.prettyprinted {
+        background-color: #efefef;
+        border: 1px solid #ddd;
+        margin: rem(20px) 0;
+        font-size: rem(11px);
+        padding: rem(10px);
+
+        xmp {
+            margin: 0;
+        }
+    }
+}

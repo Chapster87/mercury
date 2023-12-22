@@ -1,4 +1,5 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-styleguide.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -15,46 +16,90 @@
 {%- endstyle -%}
 
 <div class="page-width section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
-  </div>
+    <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ page.title | escape }}
+    </h1>
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ page.content }}
+    </div>
 
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <section class="guide-block">
+            <div class="guide-heading">
+                <h2 class="guide-headline" id="text">Text</h1>
+                <div class="heading-code-switch custom-control custom-switch">
+                    <input type="checkbox" class="code-switch custom-control-input" id="codeSwitch-text">
+                    <label class="custom-control-label" for="codeSwitch-text">View Code
+                        <span class="switch-text-label"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="guide-block-body row">
+                <div class="col-12">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <p>Paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat libero id congue ultrices.</p>
+                    <p class='bold'>Bold paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat libero id congue ultrices.</p>
+                    <ul><li>Unordered List Item 1</li><li>Unordered List Item 2</li><li>Unordered List Item 3</li></ul>
+                    <ol><li>Ordered List Item 1</li><li>Ordered List Item 2</li><li>Ordered List Item 3</li></ol>
+                    <p>Example of an <a href='#'>Inline Link</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <section class="guide-block code-active">
+        <div class="row">
+            <div class="col-12">
+                <div class="guide-heading">
+                    <h2 class="guide-headline" id="buttons">Buttons</h2>
+                    <div class="heading-code-switch custom-control custom-switch">
+                        <input type="checkbox" class="code-switch custom-control-input" id="codeSwitch-buttons">
+                        <label class="custom-control-label" for="codeSwitch-buttons">View Code</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guide-block-body row">
+            <div class="col-12">
+                {% render 'styleguide-buttons' %}
+                <pre class="prose prose-slate prose-xl"><xmp>{% render 'styleguide-buttons' %}</xmp></pre>
+            </div>
+        </div>
+    </section>
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.main-page.name",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
-}
+  {
+    "name": "t:sections.main-page.name",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ]
+  }
 {% endschema %}

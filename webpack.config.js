@@ -20,7 +20,7 @@ module.exports = {
     },
     optimization: {
         minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
-        minimize: true,
+        minimize: mode === 'development' ? false : true,
     },
     watchOptions: {
         poll: true,
@@ -46,6 +46,7 @@ module.exports = {
                 {
                     loader: 'css-loader',
                     options: {
+                        url: false,
                         importLoaders: 1,
                     },
                 },
@@ -68,8 +69,8 @@ module.exports = {
                     context: path.resolve(__dirname, 'src'),
                     globOptions: {
                         ignore: [
-                            '**/src/js/**/*',
-                            '**/src/assets/**/*.js'
+                            '**/src/assets/**/*.js',
+                            '**/src/bundles/**/*'
                         ],
                     }
                 }
