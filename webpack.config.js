@@ -40,7 +40,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
+                test: /\.(css|scss)$/,
                 use: [
                 MiniCssExtractPlugin.loader,
                 {
@@ -51,6 +51,7 @@ module.exports = {
                     },
                 },
                 'postcss-loader',
+                'sass-loader'
             ],
         },
         ],
@@ -79,6 +80,9 @@ module.exports = {
     ],
     resolve: {
         extensions: ['.js'],
-        preferRelative: true
+        preferRelative: true,
+        alias: {
+            Assets: path.resolve(__dirname, 'src/assets/')
+        },
     },
 };
