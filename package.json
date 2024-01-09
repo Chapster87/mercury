@@ -14,10 +14,10 @@
     "author": "Andy Chapman",
     "main": "webpack.config.js",
     "scripts": {
-        "build": "webpack",
+        "build": "NODE_ENV=development webpack",
         "dev": "NODE_ENV=development webpack --watch --progress",
         "prod": "NODE_ENV=production webpack --watch --progress",
-        "shopify": "cd dist && shopify theme dev --store chapman001 --port=3002"
+        "shopify": "cd dist && shopify theme dev --store chapman001 --port=3001"
     },
     "babel": {
         "presets": [

@@ -1,0 +1,31 @@
+.btn-text {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-align: left;
+}
+
+.copy-to-cb {
+    &:after {
+        content: '';
+        display: none;
+        font-family:"bootstrap-icons";
+        margin-left: rem(5);
+    }
+
+    &:hover {
+        &:after {
+            content: '\F470';
+            display: inline;
+        }
+    }
+
+    &.copied {
+        &:after {
+            content: '\F272';
+            display: inline;
+            animation: fadeOut 2s;
+        }
+    }
+}

@@ -1,5 +1,9 @@
+{{ 'prism.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
-{{ 'section-styleguide.css' | asset_url | stylesheet_tag }}
+{{ 'styleguide.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'prism.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'styleguide.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -23,46 +27,48 @@
         {{ page.content }}
     </div>
 
-    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <section class="guide-block">
-            <div class="guide-heading">
-                <h2 class="guide-headline" id="text">Text</h1>
-                <div class="heading-code-switch custom-control custom-switch">
-                    <input type="checkbox" class="code-switch custom-control-input" id="codeSwitch-text">
-                    <label class="custom-control-label" for="codeSwitch-text">View Code
-                        <span class="switch-text-label"></span>
-                    </label>
+    <section class="guide-block{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="row">
+            <div class="col-12">
+                <div class="guide-heading">
+                    <h2 class="guide-headline" id="colors">Colors</h2>
                 </div>
             </div>
-            <div class="guide-block-body row">
-                <div class="col-12">
-                    <h1>Heading 1</h1>
-                    <h2>Heading 2</h2>
-                    <h3>Heading 3</h3>
-                    <h4>Heading 4</h4>
-                    <h5>Heading 5</h5>
-                    <p>Paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat libero id congue ultrices.</p>
-                    <p class='bold'>Bold paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat libero id congue ultrices.</p>
-                    <ul><li>Unordered List Item 1</li><li>Unordered List Item 2</li><li>Unordered List Item 3</li></ul>
-                    <ol><li>Ordered List Item 1</li><li>Ordered List Item 2</li><li>Ordered List Item 3</li></ol>
-                    <p>Example of an <a href='#'>Inline Link</a></p>
-                </div>
+        </div>
+        <div class="guide-block-body row">
+            <div class="col-12">
+                {% render 'styleguide-colors' %}
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <section class="guide-block code-active">
+    <section class="guide-block{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="row">
+            <div class="col-12">
+                <div class="guide-heading">
+                    <h2 class="guide-headline" id="text">Text</h1>
+                    <div class="heading-code-switch form-check form-switch">
+                        <input class="form-check-input code-switch" type="checkbox" role="switch" id="codeSwitch-text">
+                        <label class="form-check-label" for="codeSwitch-text">View Code</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guide-block-body row">
+            <div class="col-12">
+                {% render 'styleguide-text' %}
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-block sg-buttons{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <div class="row">
             <div class="col-12">
                 <div class="guide-heading">
                     <h2 class="guide-headline" id="buttons">Buttons</h2>
-                    <div class="heading-code-switch custom-control custom-switch">
-                        <input type="checkbox" class="code-switch custom-control-input" id="codeSwitch-buttons">
-                        <label class="custom-control-label" for="codeSwitch-buttons">View Code</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                    <div class="heading-code-switch form-check form-switch">
+                        <input class="form-check-input code-switch" type="checkbox" role="switch" id="codeSwitch-buttons">
+                        <label class="form-check-label" for="codeSwitch-buttons">View Code</label>
                     </div>
                 </div>
             </div>
@@ -70,11 +76,59 @@
         <div class="guide-block-body row">
             <div class="col-12">
                 {% render 'styleguide-buttons' %}
-                <pre class="prettyprint"><xmp>{% render 'styleguide-buttons' %}</xmp></pre>
+                <div class="code-example">
+                    <script type="text/plain" class="language-markup">{% render 'styleguide-buttons' %}</script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-block{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="row">
+            <div class="col-12">
+                <div class="guide-heading">
+                    <h2 class="guide-headline" id="forms">Forms</h2>
+                    <div class="heading-code-switch form-check form-switch">
+                        <input class="form-check-input code-switch" type="checkbox" role="switch" id="codeSwitch-forms">
+                        <label class="form-check-label" for="codeSwitch-forms">View Code</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guide-block-body row">
+            <div class="col-12 col-md-6">
+                {% render 'styleguide-forms' %}
+            </div>
+            <div class="code-example col-12">
+                <script type="text/plain" class="language-markup">{% render 'styleguide-forms' %}</script>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-block{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="row">
+            <div class="col-12">
+                <div class="guide-heading">
+                    <h2 class="guide-headline" id="modals">Modals</h1>
+                    <div class="heading-code-switch form-check form-switch">
+                        <input class="form-check-input code-switch" type="checkbox" role="switch" id="codeSwitch-modals">
+                        <label class="form-check-label" for="codeSwitch-modals">View Code</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guide-block-body row">
+            <div class="col-12">
+                {% render 'styleguide-modal-trigger' %}
+                <div class="code-example ">
+                    <script type="text/plain" class="language-markup">{% render 'styleguide-modal' %}</script>
+                </div>
             </div>
         </div>
     </section>
 </div>
+
+{% render 'styleguide-modal' %}
 
 {% schema %}
   {

@@ -5,7 +5,7 @@
   box-sizing: inherit;
 }
 
-a:empty,
+/* a:empty,
 ul:empty,
 dl:empty,
 div:empty,
@@ -19,7 +19,7 @@ h4:empty,
 h5:empty,
 h6:empty {
   display: none;
-}
+} */
 
 html {
   font-size: calc(var(--font-body-scale) * 62.5%);
