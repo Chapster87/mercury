@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: mode,
-    entry: glob.sync('./src/**/*.js').reduce((acc, path) => {
+    entry: glob.sync('./src/bundles/**/*.js').reduce((acc, path) => {
         const entry = path.replace(/^.*[\\\/]/, '').replace('.js', '');
         acc[entry] = path;
         return acc;
@@ -70,7 +70,6 @@ module.exports = {
                     context: path.resolve(__dirname, 'src'),
                     globOptions: {
                         ignore: [
-                            '**/src/assets/**/*.js',
                             '**/src/bundles/**/*'
                         ],
                     }

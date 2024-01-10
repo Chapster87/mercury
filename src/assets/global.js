@@ -1,5 +1,3 @@
-require('../bundles/js/app');
-
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(

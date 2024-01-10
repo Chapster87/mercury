@@ -26,4 +26,4 @@ document.querySelectorAll('.copy-to-cb')
         event.target.classList.remove('copied');
       }, 2000);
     });
-  });ß
+  });
